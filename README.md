@@ -44,8 +44,6 @@ El trabajo parte de un baseline lineal y avanza hacia modelos más expresivos:
 
 ## Resultados principales
 
-Según el informe final incluido en el repositorio:
-
 - el baseline lineal mostró desempeño insuficiente y sugirió subajuste
 - KNN con distancia de Jaccard mejoró fuertemente al baseline y confirmó la presencia de no linealidades
 - XGBoost logró `RMSE = 5065.09 USD` y `R² = 0.9086`
@@ -55,7 +53,7 @@ Según el informe final incluido en el repositorio:
 
 ## Dataset
 
-El informe indica que se trabajó con **18.254 publicaciones de SUVs** extraídas de Mercado Libre entre el **13 y el 30 de mayo de 2025**.
+Se trabajó con **18.254 publicaciones de SUVs** extraídas de Mercado Libre entre el **13 y el 30 de mayo de 2025**.
 
 Características relevantes del dataset:
 
@@ -128,7 +126,7 @@ Se entrenó un regresor lineal para:
 - medir la complejidad real del problema
 - estudiar si la linealidad alcanzaba para capturar la relación entre atributos y precio
 
-La conclusión fue que no.
+La conclusión fue que la naturaleza matemática de este modelo no fue sufiente para capturar la complejidad de los datos
 
 ### 6. Reducción de dimensionalidad y agrupamientos
 
@@ -265,13 +263,9 @@ Carpeta dedicada a transformar el conjunto de test enmascarado y aplicar modelos
 
 Archivos compilados automáticamente por Python para acelerar imports. No contienen lógica del proyecto.
 
-### Archivo temporal de oficina
-
-- `.~lock.SUVS_2025-test-masked.csv#`: archivo de bloqueo generado por LibreOffice u otra herramienta de edición. No forma parte del pipeline.
-
 ## Flujo recomendado para recorrer el proyecto
 
-Si se quiere entender el trabajo de punta a punta, el orden sugerido es:
+Para entender el trabajo de punta a punta, el orden sugerido es:
 
 1. leer `Galliano_GoróPicart_Informe_PF.pdf`
 2. revisar `Primeros procesamientos y modelos baseline/preprocesamiento.ipynb`
@@ -306,9 +300,9 @@ Las principales conclusiones del trabajo fueron:
 - el ensamble entre red neuronal y XGBoost ofrece el mejor equilibrio entre precisión y robustez
 - el sistema tiene potencial para extenderse a casos reales de pricing y detección de oportunidades de compra
 
-## Requisitos aproximados
+## Librerías utilizadas
 
-El repositorio no incluye un archivo de dependencias congeladas, pero por el código utilizado se infiere que se trabajó con bibliotecas como:
+Se emplearon las siguientes librerías de Python para llevar a cabo el trabajo:
 
 - `pandas`
 - `numpy`
@@ -317,9 +311,3 @@ El repositorio no incluye un archivo de dependencias congeladas, pero por el có
 - `joblib`
 - `tensorflow / keras`
 - `xgboost`
-
-## Notas
-
-- Algunos resultados finales del informe mencionan un modelo ensamble y experimentos adicionales que no están empaquetados como scripts separados en esta carpeta raíz; parte de la lógica vive dentro de notebooks o en materiales externos enlazados desde el PDF.
-- El apéndice del informe referencia una carpeta externa de Google Drive con códigos fuente y predicciones adicionales.
-
